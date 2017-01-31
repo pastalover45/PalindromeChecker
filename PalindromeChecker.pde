@@ -16,86 +16,128 @@ public void setup()
 }
 
 
-// public boolean palindrome(String word)
-// {
 
-//   String pal = new String();
-//   String pal2 = new String();
+public String reverse(String str)
+{
+    int nLast = str.length()-1;
+    String sNew= new String();
 
-//     pal = word;
-//     pal2 = reverse(word);
+ for(int i = nLast; i>-1; i--){
+    
+       sNew = sNew + str.substring(i,i+1);
+     }
+
+  return sNew;
+}
 
 
-//   if (pal.equals(pal2)) {
-//       return true;
-//   }
+
+
+public boolean palindrome(String word)
+{
+
+  String pal = new String();
+  String pal2 = new String();
+
+    pal = word;
+    pal2 = reverse(word.toLowerCase());
+    pal = remove(pal);
+    pal2 = remove(pal2);
+
+
+  if (pal.equalsIgnoreCase(pal2)) {
+      return true;
+  }
+  return false;
+  
+}
+
+
+
+
+public String remove(String word){
+
+
+String sWord = new String();
+String newWord = new String();
+ 
+ 
+ for(int i =0; i<word.length(); i++){
+    if(word.substring(i,i+1).equals(" ")||word.substring(i,i+1).equals("!")||word.substring(i,i+1).equals("'")||word.substring(i,i+1).equals(",")){
+    
+      newWord = "";
+    
+    }
+
+    else 
+    {
+
+      newWord= word.substring(i,i+1);
+
+    }
+    
+    sWord = sWord + newWord;   
+ }
+
+return sWord;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public boolean palindrome(String sWord){
+  
+//   String emptyX = new String();
+//   String emptyY = new String();
+
+//   emptyX = sWord;
+//   emptyY = reverse(sWord.toLowerCase());
+
+//   if (emptyX.equals(emptyY)) {
+//   return true;
+  
+// }
 //   return false;
 //   }
 
-// }
 
 
 
 
-// public String reverse(String str)
-// {
-//     String sWord = new String();
-//     int nLast = str.length()-1;
-
-//     for(int i =nLast; i>=0; i--)
-//        if(str.substring(i,i+1).equals(" ")||str.substring(i,i+1).equals("!")||str.substring(i,i+1).equals("'")||str.substring(i,i+1).equals(",")){
-//           newLetter = "";
-// }
-
-//         sNew = sNew + str.substring(i,i+1); 
-//     return sNew.toLowerCase();
+// public String reverse(String sWord){
+//     String sNew = new String();
+//     int nLast = sWord.length()-1;
+//       for(int nI=nLast; nI>=0; nI--)
+//         sNew = sNew +  sWord.substring(nI,nI+1); 
+//     return sNew;
 
 // }
-
-
-
-
-
-
-
-
-public String reverse(String sWord){
-    String sNew = new String();
-    int nLast = sWord.length()-1;
-      for(int nI=nLast; nI>=0; nI--)
-        sNew = sNew +  sWord.substring(nI,nI+1); 
-    return sNew;
-
-}
-
-
-public boolean palindrome(String sWord){
-  
-  String emptyX = new String();
-  String emptyY = new String();
-
-  emptyX = sWord;
-  emptyY = reverse(sWord.toLowerCase());
-
-  if (emptyX.equals(emptyY)) {
-  return true;
-  
-}
-  return false;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
